@@ -2,7 +2,7 @@ name: Test Curl
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   curl_and_upload:
