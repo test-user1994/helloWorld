@@ -1,6 +1,8 @@
 name: Test Curl
 
-on: [push]
+on:
+  schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
   curl_and_upload:
