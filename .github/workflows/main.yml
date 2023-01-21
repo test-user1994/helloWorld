@@ -1,0 +1,19 @@
+name: Test Curl
+
+on: [push]
+
+jobs:
+  curl_and_upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Test Curl 
+      run: |
+        curl 'https://example.com' \
+          -H 'Accept: */*' \
+          -H 'Accept-Language: en-US,en;q=0.9' \
+          -H 'Cache-Control: no-cache' \
+          -H 'Connection: keep-alive' \
+          --compressed \
+          --max-time 10 \
+          --output file.txt
