@@ -25,7 +25,7 @@ jobs:
           -H 'sec-ch-ua-mobile: ?0' \
           -H 'sec-ch-ua-platform: "macOS"' \
           --compressed \
-          --max-time 20 \
+          --max-time 60 \
           --output file.aac 
       continue-on-error: true
 
