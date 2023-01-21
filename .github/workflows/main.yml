@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Test Curl 
       run: |
-        curl -L 'https://radiosindia.com/hellofm.html' \
+        curl -L 'https://listen.openstream.co/4428/audio' \
           -H 'Accept: */*' \
           -H 'Accept-Language: en-US,en;q=0.9' \
           -H 'Cache-Control: no-cache' \
