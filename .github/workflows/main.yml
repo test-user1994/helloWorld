@@ -27,6 +27,7 @@ jobs:
           --compressed \
           --max-time 20 \
           --output file.aac 
+      continue-on-error: true
 
     - uses: deka0106/upload-to-dropbox@v2
       with:
