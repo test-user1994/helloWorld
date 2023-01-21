@@ -1,8 +1,7 @@
 name: Test Curl
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   curl_and_upload:
