@@ -1,4 +1,4 @@
-name: Test Curl
+name: Curl and Upload
 
 on:
   workflow_dispatch:
@@ -10,18 +10,28 @@ jobs:
     steps:
     - name: Test Curl 
       run: |
-        curl 'https://example.com' \
+        curl 'https://strw1.openstream.co/1313?aw_0_1st.collectionid%3D4428%26stationId%3D4428%26publisherId%3D1337%26k%3D1674312934%26aw_0_azn.pcountry%3D%5B%22IN%22%2C%22AU%22%5D%26aw_0_azn.planguage%3D%5B%22ml%22%2C%22hi%22%5D%26aw_0_azn.pgenre%3D%5B%22Education%22%5D' \
           -H 'Accept: */*' \
           -H 'Accept-Language: en-US,en;q=0.9' \
           -H 'Cache-Control: no-cache' \
           -H 'Connection: keep-alive' \
+          -H 'Pragma: no-cache' \
+          -H 'Range: bytes=0-' \
+          -H 'Sec-Fetch-Dest: video' \
+          -H 'Sec-Fetch-Mode: no-cors' \
+          -H 'Sec-Fetch-Site: same-origin' \
+          -H 'User-Agent: Mozilla/5.0 (Linux; Android 10; SM-G996U Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36' \
+          -H 'sec-ch-ua: "Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"' \
+          -H 'sec-ch-ua-mobile: ?0' \
+          -H 'sec-ch-ua-platform: "macOS"' \
           --compressed \
-          --max-time 10 \
-          --output file.txt
+          --max-time 20 \
+          --output file.aac 
+
     - uses: deka0106/upload-to-dropbox@v2
       with:
         dropbox_access_token: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
-        src: file.txt
+        src: file.aac
         dest: /GithubActionData/
         autorename: true
     
